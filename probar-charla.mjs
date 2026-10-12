@@ -57,7 +57,7 @@ const LEADS = [
     primero: 'hola quiero la llamada' },
   { nombre: 'Diego', titulo: 'Importador de bazar charlatán: cuenta todo de entrada',
     persona: 'Sos importador de bazar y regalería, vendés a bazares de todo el país, 15 empleados. Te gusta hablar. En tu primer mensaje contás qué vendés, a quién y que este año importaste el doble y tenés stock parado en el depósito, por eso querés sumar comercios. Te llegan comercios por ferias (la de Tecnópolis y la de Buenos Aires Market). Le vendés a unos 120 bazares. Podés poner 800 mil por mes. Lo decidís con tu socio. Escribís largo, con detalles.',
-    primero: 'hola sebastian como va? te cuento, somos importadores de bazar y regaleria, le vendemos a bazares de todo el pais. este año traje el doble de mercaderia y tengo stock parado en el deposito, necesito sumar comercios si o si' },
+    primero: 'hola martin como va? te cuento, somos importadores de bazar y regaleria, le vendemos a bazares de todo el pais. este año traje el doble de mercaderia y tengo stock parado en el deposito, necesito sumar comercios si o si' },
   { nombre: 'Rubén', titulo: 'Ferretería mayorista, pregunta el precio dos veces',
     persona: 'Tenés un mayorista de ferretería en Córdoba que le vende a ferreterías de la provincia. Antes de contar nada preguntás cuánto sale, y si no te dan un número, insistís una vez más. Después contestás normal: te llegan clientes por un viajante, querés llegar a otras provincias, le vendés a 90 ferreterías, podés poner 700 mil, decidís vos.',
     primero: 'hola cuanto sale?' },
@@ -93,7 +93,7 @@ const REGLAS = [
   [/\b(primera|segunda|última)\s*:/i, 'numera preguntas'], [/\b(entendido|excelente|le comento|quedo atento)\b/i, 'frase de empresa'],
   [/te garantizo|garantizamos|vas a vender|300 consultas/i, 'promete resultados'], [/\bleads?\b|\bB2B\b|funnel|embudo/i, 'jerga'],
   [/si no lo med[ií]s|el problema (es|tuyo)|te est[aá]s perdiendo/i, 'marca una falla suya'],
-  [/sebasti[aá]n otaviani/, 'nombre propio en minúscula'],
+  [/mart[ií]n acosta/, 'nombre propio en minúscula'],
 ];
 
 const resultados = [];

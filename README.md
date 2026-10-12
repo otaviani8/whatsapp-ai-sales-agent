@@ -1,6 +1,16 @@
 # WhatsApp AI Sales Agent
 
+![Node.js](https://img.shields.io/badge/Node.js-ESM-339933?logo=nodedotjs&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-tool%20use%20%C2%B7%20structured%20output-D97757?logo=anthropic&logoColor=white)
+![WhatsApp Cloud API](https://img.shields.io/badge/WhatsApp-Cloud%20API-25D366?logo=whatsapp&logoColor=white)
+![Google Calendar](https://img.shields.io/badge/Google-Calendar%20%C2%B7%20Sheets%20%C2%B7%20STT-4285F4?logo=google&logoColor=white)
+![Meta CAPI](https://img.shields.io/badge/Meta-Conversions%20API-0467DF?logo=meta&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-53%20passing-brightgreen)
+![Railway](https://img.shields.io/badge/deployed%20on-Railway-0B0D0E?logo=railway&logoColor=white)
+
 A production agent that answers every inbound lead from Click-to-WhatsApp ads, qualifies it in a natural conversation and books a sales call on Google Calendar. No human is involved until the call starts.
+
+![Test conversations](docs/demo-conversations.png)
 
 I built it for the B2B sales line of my growth agency in Argentina, and it runs in production on Railway. The conversations are in Rioplatense Spanish, so the prompts and most identifiers are in Spanish. In this public copy, the persona, the pricing and the case study are placeholders. The logic and the prompt architecture are the production ones.
 
@@ -27,6 +37,13 @@ I built it for the B2B sales line of my growth agency in Argentina, and it runs 
 
 ## Evaluation
 
+Every prompt change goes through two evals before it ships.
+
+- `probar-voz.mjs` runs the production prompt against 9 scripted leads: the direct path, a lead who asks the price twice, a lead burned by curiosity-seekers from past ads, a lead who asks for case studies, a lead who asks for a guarantee, a budget under the floor, an out-of-profile lead, "are you a bot?" with a partner who decides, and a lead who wants to talk to a client first. Each script carries pass/fail assertions on what the agent must and must not say, for example:
+  - it gives the fee only when the lead insists,
+  - it never invents sales,
+  - it never denies being an assistant,
+  - it offers a time slot once the lead qualifies.
 - `probar-charla.mjs` runs the agent against simulated leads played by an LLM. Each lead has its own business, writing style, urgency and objections. The script scores the flow:
   - how many messages it took to offer a time slot,
   - whether the agent asked about motive, budget and who decides,

@@ -1,0 +1,30 @@
+{
+  "name": "whatsapp-ai-sales-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "WhatsApp AI agent that qualifies Click-to-WhatsApp ad leads and books sales calls on Google Calendar (Claude + WhatsApp Cloud API).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test src/*.test.js pruebas/*.test.mjs",
+    "conversiones": "node enviar-conversiones.mjs",
+    "conversiones:enviar": "node enviar-conversiones.mjs --enviar",
+    "reconciliar": "node reconciliar.mjs",
+    "check": "node --check index.js && node --check src/config.js && node --check src/persona.js && node --check src/util.js && node --check src/store.js && node --check src/calendar.js && node --check src/crm.js && node --check src/insights.js && node --check src/bandit.js && node --check src/brain.js && node --check src/whatsapp.js && node --check src/followups.js && node --check src/notify.js && node --check src/authseed.js && node --check src/qrweb.js && node --check src/transcribe.js && node --check src/audio.js && node --check src/audios.js && node --check src/resumen.js && node --check src/cloud.js && node --check src/telegram.js && node --check src/alerts.js && node --check src/health.js && node --check src/conversiones.js && node --check src/cola-conversiones.js && node --check src/ventas.js && node --check enviar-conversiones.mjs && node --check reconciliar.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "@google-cloud/speech": "^7.4.0",
+    "@whiskeysockets/baileys": "^7.0.0-rc13",
+    "dotenv": "^17.4.2",
+    "ffmpeg-static": "^5.3.0",
+    "googleapis": "^173.0.0",
+    "pino": "^10.3.1",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
